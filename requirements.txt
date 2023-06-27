@@ -1,0 +1,5 @@
+numpy
+pandas
+python-dotenv
+flask
+-e .

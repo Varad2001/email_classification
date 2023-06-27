@@ -1,0 +1,6 @@
+**/__pycache__/
+logs
+static
+.env
+test.py
+*.egg-info
