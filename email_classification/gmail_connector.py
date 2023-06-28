@@ -23,6 +23,9 @@ def get_emails_from_gmail(user, password, email_count ) -> list[Email]:
 
     emails = []
 
+    if len(email_ids) < email_count :
+        email_count = len(email_ids)
+
     # Loop through the email ids and fetch the email using the RFC822 protocol
     for email_id in email_ids[:email_count]:
 
