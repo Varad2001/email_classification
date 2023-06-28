@@ -3,6 +3,7 @@ import email
 from email.utils import parseaddr
 from email_classification.email_entity import Email
 from email_classification.utils import extract_date_and_time
+from email_classification.logger import logging
 
 
 def get_emails_from_gmail(user, password, email_count ) -> list[Email]:
@@ -84,10 +85,17 @@ def get_emails_from_gmail(user, password, email_count ) -> list[Email]:
     return emails
 
 
-    
-"""emails = get_emails_from_gmail(3)
-for email in emails :
-    print(email.sender_email_address)
-    print(email.subject)
-    print(email.date_time)"""
+"""try :     
+    emails = get_emails_from_gmail("sfsfs", "dfs",3)
+    for email in emails :
+        print(email.sender_email_address)
+        print(email.subject)
+        print(email.date_time)
+except Exception as e:
+    if 'AUTHENTICATIONFAILED' in str(e.args[0]):
+        print("Login failed.")
+    else :
+        raise Exception(e)"""
+
+
 

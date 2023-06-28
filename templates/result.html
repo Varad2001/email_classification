@@ -26,15 +26,13 @@
             <tr>
                 <th>Sender Email Address</th>
                 <th>Subject</th>
-                <th>Rank</th>
                 <th>Email url</th>
             </tr>
             {% for email in sorted_emails %}
             <tr>
                 <td>{{ email.sender_email_address }}</td>
                 <td>{{ email.subject }}</td>
-                <td>{{ email.rank }}</td>
-                <td>{{ email.url }}</td>
+                <td><a href="{{ email.url }}" target="_blank">{{ email.url }}</a></td>
             </tr>
             {% endfor %}
         </table>
