@@ -3,4 +3,5 @@ pandas
 python-dotenv
 flask
 requests
+Flask-Session
 -e .

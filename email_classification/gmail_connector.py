@@ -8,6 +8,8 @@ from email_classification.logger import logging
 
 def get_emails_from_gmail(user, password, email_count ) -> list[Email]:
 
+    logging.info(f">>>>>>>>>> Getting emails from gmail {user}...  <<<<<<<<<<<")
+
     # Connect to the Gmail IMAP server and login with your credentials
     imap_url = 'imap.gmail.com'
 
@@ -25,6 +27,8 @@ def get_emails_from_gmail(user, password, email_count ) -> list[Email]:
 
     if len(email_ids) < email_count :
         email_count = len(email_ids)
+
+    logging.info(f">>> Fetching {email_count} number of emails out of total {len(email_ids)} emails ....")
 
     # Loop through the email ids and fetch the email using the RFC822 protocol
     for email_id in email_ids[:email_count]:
@@ -72,7 +76,11 @@ def get_emails_from_gmail(user, password, email_count ) -> list[Email]:
             # Get the payload of the email
             payload = email_message.get_payload(decode=True)
             # Decode the payload and print it
-            message_body = payload.decode(email_message.get_content_charset())
+            try :
+                message_body = payload.decode(email_message.get_content_charset())
+            except UnicodeDecodeError as e:
+                logging.info(f"Could not retrieve message body for : {sender_email} : {subject_field}")
+                message_body = "Unknown"
             # print(f'Message: {message_body}')
 
         an_email = Email(
@@ -84,6 +92,9 @@ def get_emails_from_gmail(user, password, email_count ) -> list[Email]:
         )
 
         emails.append(an_email)
+
+
+    logging.info(f">>>>>>>>>>> Getting emails from gmail successful. Fetched {len(emails)} number of emails.} <<<<<<<<<<<<<<<")
 
     return emails
 

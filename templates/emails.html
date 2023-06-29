@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting emails...</title>
+</head>
+<body>
+    <h1>Getting emails ...</h1>
+
+    <script>
+        function callAPI() {
+    fetch('/result', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            if (data['response'] !== 'na') {
+                // display the HTML template
+                document.body.innerHTML = data['template'];
+            } else {
+                setTimeout(callAPI, 2000);
+            }
+        });
+}
+
+window.onload = function() {
+    callAPI();
+};
+
+    </script>
+</body>
+</html>
