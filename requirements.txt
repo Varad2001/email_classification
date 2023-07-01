@@ -4,4 +4,5 @@ python-dotenv
 flask
 requests
 Flask-Session
+nltk
 -e .
