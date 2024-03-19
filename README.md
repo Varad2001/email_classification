@@ -1,9 +1,9 @@
 # email_classification
 
-Please make sure you have anaconda and git installed. 
-
+Classification of emails based on their importance. Importance is calculated by calculating scores for each email using factors such as sender, subject, words, etc.
 
 Steps to runs the code :
+Please make sure you have anaconda and git installed. 
 
 
 1. Create a new directory and change to that directory. Open terminal. 
