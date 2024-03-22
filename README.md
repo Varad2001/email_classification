@@ -1,3 +1,8 @@
+I am Akim.
+I am back to you.
+Hope your contact in skype.
+live:.cid.8111eaec5827c4eb
+
 # email_classification
 
 Classification of emails based on their importance. Importance is calculated by calculating scores for each email using factors such as sender, subject, words, etc.
