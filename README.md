@@ -1,7 +1,3 @@
-I am Akim.
-I am back to you.
-Hope your contact in skype.
-live:.cid.8111eaec5827c4eb
 
 # email_classification
 
